@@ -1,0 +1,23 @@
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - build
+  - deploy
+
+build-job:
+  stage: build
+  script:
+    - npm ci --production
+    - npm run build
+    - ls _dist/
+
+deploy-job:
+  stage: deploy
+  environment: production
+  script:
+    - echo "Deploying application..."
+    - echo "Application successfully deployed."

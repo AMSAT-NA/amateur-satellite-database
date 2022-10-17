@@ -1,0 +1,25 @@
+slug: amsat-satellite-index
+
+site_name: Amateur satellite database
+locale: en_US
+
+headline: Amateur satellite database
+
+[byline]
+name: Mineo Wakita (JE9PEL)
+url: http://www.ne.jp/asahi/hamradio/je9pel/
+
+name: Ben Welsh (KN6VVP)
+url: https://palewi.re/
+[]
+
+pub_date: 2022-10-16 08:00:00
+update_date:
+
+seo_headline: Amateur satellite database
+seo_description: The active radio frequencies for amateur satellites orbiting Earth
+
+social_headline: Amateur satellite database
+social_description: The active radio frequencies for amateur satellites orbiting Earth
+
+social_image: assets/images/baker.jpg

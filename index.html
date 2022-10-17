@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'styles/app.scss' %}">
+{% endblock styles %}
+
+{% block scripts %}
+{% script 'app' %}
+{% endblock scripts %}
+
+{% block content %}
+<nav class="navigation"></nav>
+<article class="container">
+  <header>
+    <h1 class="headline">{{ meta.headline }}</h1>
+    <div class="attribution">
+        {% set comma = joiner() %}
+        <p class="byline">
+          By {%- for author in meta.byline -%}
+          {% if not loop.last %}{{ comma() }}{% elif not loop.first %} and{% endif %} <span class="author" itemscope itemtype="http://schema.org/Person"><a itemprop="url" href="{{ author.url }}">{{ author.name }}</a></span>
+          {%- endfor -%}
+        </p>
+    </div>
+  </header>
+  <section>
+    {% for p in copy.body %}
+        <p class="prose">{{ p.value }}</p>
+    {% endfor %}
+    <div id="table-container"></div>
+  </section>
+</article>
+<footer class="footer">
+
+</footer>
+{% endblock content %}

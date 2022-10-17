@@ -12,7 +12,14 @@
 {% endblock scripts %}
 
 {% block content %}
-<nav class="navigation"></nav>
+<nav class="navigation">
+  <div class="masthead">
+  <a href="https://amsat.org">
+    <span><img class="logo" src="{% static 'assets/images/amsat.png' %}" width=30 height=30></span>
+    <span>AMSAT</span>
+  </a>
+  </div>
+</nav>
 <article class="container">
   <header>
     <h1 class="headline">{{ meta.headline }}</h1>

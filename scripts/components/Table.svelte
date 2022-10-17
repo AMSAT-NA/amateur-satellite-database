@@ -96,7 +96,6 @@
   const getTableRows = (arr, attr, order) => {
     // Sort the data
     let sortFunc = sortFuncLookup[attr];
-    console.log(sortAttr);
     arr.sort(sortFunc(attr, order));
     // Return the array formatted for our template
     return arr.map(formatRow);

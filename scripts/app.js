@@ -6,7 +6,6 @@ const url =
   'https://raw.githubusercontent.com/palewire/ham-satellite-database/main/data/all-frequencies.json';
 
 json(url).then(function (data) {
-  console.log(data);
   new Table({
     target: document.getElementById('table-container'),
     props: {

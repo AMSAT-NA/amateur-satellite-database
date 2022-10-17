@@ -14,6 +14,14 @@ export const fillNa = (value, filler = '') => {
   }
 };
 
+export const sortableFrequency = (value) => {
+  if (value) {
+    return parseFloat(value.split('-', 1)[0].split('/', 1)[0]);
+  } else {
+    return 9999999;
+  }
+};
+
 export const getSortByString = (attr, ascending = true) => {
   if (ascending) {
     return (a, b) => {
@@ -46,6 +54,18 @@ export const getSortByNumber = (attr, ascending = true) => {
   } else {
     return (a, b) => {
       return fillNa(b[attr], 9999999) - fillNa(a[attr], 9999999);
+    };
+  }
+};
+
+export const getSortByFrequency = (attr, ascending = true) => {
+  if (ascending) {
+    return (a, b) => {
+      return sortableFrequency(a[attr]) - sortableFrequency(b[attr]);
+    };
+  } else {
+    return (a, b) => {
+      return sortableFrequency(b[attr]) - sortableFrequency(a[attr]);
     };
   }
 };

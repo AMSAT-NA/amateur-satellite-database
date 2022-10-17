@@ -1,5 +1,5 @@
 <script>
-  import { getSortByString, getSortByNumber, capFirst } from './utils.js';
+  import { getSortByString, getSortByNumber, getSortByFrequency, capFirst } from './utils.js';
 
   export let data;
 
@@ -85,9 +85,9 @@
   const sortFuncLookup = {
     satellite: getSortByString,
     number: getSortByNumber,
-    uplink: getSortByString,
-    downlink: getSortByString,
-    beacon: getSortByString,
+    uplink: getSortByFrequency,
+    downlink: getSortByFrequency,
+    beacon: getSortByFrequency,
     mode: getSortByString,
     callsign: getSortByString,
     status: getSortByString

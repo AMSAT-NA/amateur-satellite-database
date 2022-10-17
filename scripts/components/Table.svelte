@@ -81,16 +81,23 @@
     ]
   });
 
+  // How to sort each column
+  const sortFuncLookup = {
+    satellite: getSortByString,
+    number: getSortByNumber,
+    uplink: getSortByString,
+    downlink: getSortByString,
+    beacon: getSortByString,
+    mode: getSortByString,
+    callsign: getSortByString,
+    status: getSortByString
+  };
+
   const getTableRows = (arr, attr, order) => {
     // Sort the data
-    let sortFunc;
-    if (attr == "number") {
-        sortFunc = getSortByNumber(attr, order);
-    } else {
-        sortFunc = getSortByString(attr, order);
-    } 
-    arr.sort(sortFunc);
-
+    let sortFunc = sortFuncLookup[attr];
+    console.log(sortAttr);
+    arr.sort(sortFunc(attr, order));
     // Return the array formatted for our template
     return arr.map(formatRow);
   };

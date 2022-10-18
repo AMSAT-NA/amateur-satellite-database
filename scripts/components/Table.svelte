@@ -8,8 +8,8 @@
   let showAll = false;
 
   const headerList = [
-      { text: 'Name', class: 'text-left sortable', attr: 'satellite' },
-      { text: 'Number', class: 'text-left sortable', attr: 'number' },
+      { text: 'Name', class: 'text-left sortable', attr: 'name' },
+      { text: 'NORAD ID', class: 'text-left sortable', attr: 'norad_id' },
       {
         text: 'Uplink',
         class: 'text-left sortable',
@@ -31,27 +31,22 @@
         attr: 'mode',
       },
       {
-        text: 'Callsign',
-        class: 'text-left sortable',
-        attr: 'callsign',
-      },
-      {
         text: 'Status',
         class: 'text-left sortable',
         attr: 'status',
       },
     ];
 
-  let sortAttr = 'satellite';
+  let sortAttr = 'name';
   let sortAscending = true;
   let radioSelected = 'active';
 
   $: formatRow = (d) => ({
-    text: d.satellite,
+    text: d.satnogs_id ? `<a target=_blank href='https://db.satnogs.org/satellite/${d.satnogs_id}'>${d.name}</a>` : d.name,
     class: 'text-left',
-    sort: d.satellite,
+    sort: d.name,
     values: [{
-        text: d.number,
+        text: d.norad_id,
         class: 'text-left',
       },
       {
@@ -71,10 +66,6 @@
         class: 'text-left',
       },
       {
-        text: d.callsign,
-        class: 'text-left',
-      },
-      {
         text: capFirst(d.status),
         class: 'text-left',
       }
@@ -83,8 +74,8 @@
 
   // How to sort each column
   const sortFuncLookup = {
-    satellite: getSortByString,
-    number: getSortByNumber,
+    name: getSortByString,
+    norad_id: getSortByNumber,
     uplink: getSortByFrequency,
     downlink: getSortByFrequency,
     beacon: getSortByFrequency,

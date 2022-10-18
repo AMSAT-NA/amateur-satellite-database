@@ -3,7 +3,7 @@ import { json } from 'd3-fetch';
 import Table from './components/Table.svelte';
 
 const url =
-  'https://raw.githubusercontent.com/palewire/ham-satellite-database/main/data/all-frequencies.json';
+  'https://raw.githubusercontent.com/palewire/amateur-satellite-database/main/data/amsat-all-frequencies.json';
 
 json(url).then(function (data) {
   new Table({

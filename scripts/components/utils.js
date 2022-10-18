@@ -25,20 +25,32 @@ export const sortableFrequency = (value) => {
 export const getSortByString = (attr, ascending = true) => {
   if (ascending) {
     return (a, b) => {
-      if (fillNa(a[attr], 'zzz') < fillNa(b[attr], 'zzz')) {
+      if (
+        fillNa(a[attr], 'zzz').toLowerCase() <
+        fillNa(b[attr], 'zzz').toLowerCase()
+      ) {
         return -1;
       }
-      if (fillNa(a[attr], 'zzz') > fillNa(b[attr], 'zzz')) {
+      if (
+        fillNa(a[attr], 'zzz').toLowerCase() >
+        fillNa(b[attr], 'zzz').toLowerCase()
+      ) {
         return 1;
       }
       return 0;
     };
   } else {
     return (a, b) => {
-      if (fillNa(a[attr], 'zzz') > fillNa(b[attr], 'zzz')) {
+      if (
+        fillNa(a[attr], 'zzz').toLowerCase() >
+        fillNa(b[attr], 'zzz').toLowerCase()
+      ) {
         return -1;
       }
-      if (fillNa(a[attr], 'zzz') < fillNa(b[attr], 'zzz')) {
+      if (
+        fillNa(a[attr], 'zzz').toLowerCase() <
+        fillNa(b[attr], 'zzz').toLowerCase()
+      ) {
         return 1;
       }
       return 0;

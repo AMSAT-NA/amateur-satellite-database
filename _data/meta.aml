@@ -13,13 +13,13 @@ name: Ben Welsh (KN6VVP)
 url: https://palewi.re/
 []
 
-pub_date: 2022-10-16 08:00:00
+pub_date: 2022-10-19 08:00:00
 update_date:
 
-seo_headline: Amateur satellite database
-seo_description: The active radio frequencies for amateur satellites orbiting Earth
+seo_headline: Amateur satellite database - AMSAT
+seo_description: The frequencies of ham radio satellites orbiting Earth
 
-social_headline: Amateur satellite database
-social_description: The active radio frequencies for amateur satellites orbiting Earth
+social_headline: The AMSAT Amateur satellite database
+social_description: The frequencies of ham radio satellites orbiting Earth
 
-social_image: assets/images/baker.jpg
+social_image: assets/images/social.png

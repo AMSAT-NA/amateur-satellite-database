@@ -14,10 +14,18 @@ build-job:
     - npm ci --production
     - npm run build
     - ls _dist/
+  artifacts:
+    paths:
+      - _dist/
 
 deploy-job:
+  image: "python:latest"
   stage: deploy
   environment: production
+  dependencies:
+    - build-job
+  before_script:
+    - pip install awscli
   script:
     - echo "Deploying application..."
-    - echo "Application successfully deployed."
+    - aws s3 cp _dist/ s3://amsat-web-static/amsat-satellite-index/ --recursive

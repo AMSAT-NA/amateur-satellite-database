@@ -28,4 +28,4 @@ deploy-job:
     - pip install awscli
   script:
     - echo "Deploying application..."
-    - aws s3 cp _dist/ s3://amsat-web-static/amsat-satellite-index/ --recursive
+    - aws s3 cp _dist/ s3://amsat-web-static/amateur-satellite-index/ --recursive

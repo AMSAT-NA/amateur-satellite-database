@@ -9,6 +9,9 @@
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="social.svg"
+   inkscape:export-filename="/home/palewire/Code/amsat-satellite-index/assets/images/social.png"
+   inkscape:export-xdpi="25.4"
+   inkscape:export-ydpi="25.4"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -115,22 +118,22 @@
        style="font-size:600px;line-height:1;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';white-space:pre;shape-inside:url(#rect2441)"><tspan
          x="228.40039"
          y="1109.582"
-         id="tspan21890"><tspan
+         id="tspan21921"><tspan
            style="font-weight:bold;fill:#ffffff"
-           id="tspan21888">Amateur
+           id="tspan21919">Amateur
 </tspan></tspan><tspan
          x="228.40039"
          y="1709.582"
-         id="tspan21894"><tspan
+         id="tspan21925"><tspan
            dx="0 0 0 0 0 0 0 0 0 0.00012207031"
            style="font-weight:bold;fill:#ffffff"
-           id="tspan21892">satellite
+           id="tspan21923">satellite
 </tspan></tspan><tspan
          x="228.40039"
          y="2309.582"
-         id="tspan21898"><tspan
+         id="tspan21929"><tspan
            dx="0 0 0 0 0 0 -0.00012207031"
            style="font-weight:bold;fill:#ffffff"
-           id="tspan21896">database</tspan></tspan></text>
+           id="tspan21927">database</tspan></tspan></text>
   </g>
 </svg>

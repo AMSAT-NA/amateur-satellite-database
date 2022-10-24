@@ -12,7 +12,7 @@ build-job:
   stage: build
   script:
     - npm ci --production
-    - npm run build
+    - BAKER_PATH_PREFIX=/amateur-satellite-index/ npm run build
     - ls _dist/
   artifacts:
     paths:

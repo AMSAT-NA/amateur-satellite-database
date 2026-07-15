@@ -7,6 +7,7 @@
   "scripts": {
     "build": "NODE_ENV=production bake build --config",
     "git-pre-commit": "lint-staged",
+    "postinstall": "patch-package",
     "start": "NODE_ENV=development bake serve --config"
   },
   "dependencies": {

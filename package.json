@@ -1,29 +1,38 @@
 {
-  "name": "page-template",
+  "name": "amateur-satellite-database",
   "private": true,
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "build": "NODE_ENV=production bake build --config",
     "git-pre-commit": "lint-staged",
     "start": "NODE_ENV=development bake serve --config"
   },
   "dependencies": {
-    "@datagraphics/baker": "^0.41.0",
-    "@datagraphics/delivery": "^0.6.0",
+    "@datagraphics/baker": "^0.47.0",
     "d3": "^7.6.1",
     "intersection-observer": "^0.12.0",
     "svelte": "^3.52.0"
   },
   "devDependencies": {
     "@datagraphics/prettier-config": "^2.0.0",
-    "@types/node": "^14.17.20",
-    "@vercel/git-hooks": "^1.0.0",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.4.1"
+    "@types/node": "^24.0.0",
+    "lint-staged": "^15.0.0",
+    "patch-package": "^8.0.1",
+    "prettier": "^3.0.0",
+    "simple-git-hooks": "^2.11.0"
   },
   "prettier": "@datagraphics/prettier-config",
   "lint-staged": {
     "*.{js,md,scss}": [
       "prettier --write"
     ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "allowScripts": {
+    "simple-git-hooks@2.13.1": true
   }
 }

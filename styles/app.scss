@@ -7,6 +7,8 @@
 @use './variables/colors';
 @use './variables/fonts';
 
+@use 'sass:color';
+
 // YOUR CODE
 // Starting writing your stuff below here
 .navigation {
@@ -301,6 +303,6 @@ p {
   transition: background-color 0.2s;
   border-width: 0px;
   &:hover {
-    background-color: darken(#eee, 10%);
+    background-color: color.adjust(#eee, $lightness: -10%);
   }
 }

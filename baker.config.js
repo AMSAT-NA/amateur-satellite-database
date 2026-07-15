@@ -4,7 +4,7 @@ const entrypoints = [
 ];
 
 export default {
-  domain: 'https://amsat.org',
+  domain: 'https://satdb.amsat.org',
   entrypoints: `scripts/${
     entrypoints.length > 1 ? `{${entrypoints.join(',')}}` : entrypoints[0]
   }.js`,

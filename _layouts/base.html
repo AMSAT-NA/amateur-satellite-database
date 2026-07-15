@@ -18,7 +18,7 @@
   <meta property="og:title" content="{{ meta.social_headline }}">
   <meta property="og:description" content="{{ meta.social_description }}">
   <meta property="og:url" content="{{ page.absoluteUrl }}">
-  <meta property="og:image" content="{% staticabsolute meta.social_image %}">
+  <meta property="og:image" content="{% static meta.social_image %}">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="{{ meta.site_name }}">
   <meta property="og:locale" content="{{ meta.locale }}">
@@ -28,7 +28,7 @@
   <meta property="twitter:title" content="{{ meta.social_headline }}">
   <meta property="twitter:description" content="{{ meta.social_description }}">
   <meta property="twitter:url" content="{{ page.absoluteUrl }}">
-  <meta property="twitter:image" content="{% staticabsolute meta.social_image %}">
+  <meta property="twitter:image" content="{% static meta.social_image %}">
   <meta property="twitter:card" content="summary_large_image">
   {% endblock twitter %}
 
@@ -40,8 +40,8 @@
     "headline": "{{ meta.seo_headline }}",
     "image": {
       "@type": "ImageObject",
-      "contentUrl": "{% staticabsolute meta.social_image %}",
-      "url": "{% staticabsolute meta.social_image %}",
+      "contentUrl": "{% static meta.social_image %}",
+      "url": "{% static meta.social_image %}",
       "representativeOfPage": true
     },
     "dateCreated": "{{ meta.pub_date|date("yyyy-MM-dd HH:mm:ss") }}",

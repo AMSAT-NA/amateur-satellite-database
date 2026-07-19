@@ -19,7 +19,11 @@ Kickstart the local development server.
 npm start
 ```
 
-Visit localhost:3000 in your web browser. Changes you make the source code should appear immediately. Commit and push them to the repository's main branch and they will be automatically published by GitLab's continuous deployment system.
+Visit localhost:3000 in your web browser. Changes you make the source code should appear immediately. Commit and push them to the repository's main branch and they will be automatically built and deployed by GitHub Actions.
+
+## Deployment
+
+The site is hosted on Cloudflare Pages and deployed via GitHub Actions on every push to `main` — see [DEPLOYMENT.md](DEPLOYMENT.md) for how the pipeline works, one-time Cloudflare project setup, required secrets/variables, and troubleshooting.
 
 ## About the site
 

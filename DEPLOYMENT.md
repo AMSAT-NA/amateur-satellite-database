@@ -59,13 +59,15 @@ If either ever needs to be rotated or recreated:
 
 ## Custom domain (satdb.amsat.org)
 
-The custom domain is attached via the Cloudflare dashboard, not via `wrangler` (there's no CLI subcommand for it as of wrangler 4.x):
+The custom domain is attached via the Cloudflare dashboard, not via `wrangler` (there's no CLI subcommand for it as of wrangler 4.x — it can also be done via the Cloudflare API's `POST /accounts/{account_id}/pages/projects/{project}/domains`, which is how it was done for this repo, using a `wrangler login` OAuth session):
 
 1. Cloudflare dashboard → Workers & Pages → **amateur-satellite-database** project → **Custom domains** tab.
 2. Add `satdb.amsat.org`.
-3. Because DNS for `amsat.org` is already managed on Cloudflare, this auto-provisions the CNAME record — no manual DNS step needed.
+3. **This does not auto-create the DNS record**, even though `amsat.org`'s DNS is already on Cloudflare. The domain sits in `pending` status (`CNAME record not set`) until a CNAME is added manually:
+   - `satdb` → `amateur-satellite-database.pages.dev`, proxied (orange cloud on).
+   - Cloudflare dashboard → DNS → Records → Add record, in the `amsat.org` zone.
 
-This only needs to be done once per project. If the project is ever deleted and recreated, this step needs to be redone.
+This only needs to be done once per project. If the project is ever deleted and recreated, this step needs to be redone. Registering the domain with the Pages project (step 1–2 above) and creating the CNAME (step 3) are two separate actions — both are required before the domain resolves.
 
 ---
 

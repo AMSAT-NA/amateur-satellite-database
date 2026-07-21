@@ -45,15 +45,19 @@ Do not `wrangler pages deploy` manually from a workstation for routine deploys �
 
 ## Required GitHub secrets/variables
 
-| Name                    | Type                              | Where it lives                                                         | Purpose                                                                             |
-| ----------------------- | --------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `CLOUDFLARE_API_TOKEN`  | Secret, org-wide                  | GitHub org settings → Secrets and variables → Actions                  | Auth token `wrangler-action` uses to deploy                                         |
-| `CLOUDFLARE_ACCOUNT_ID` | Variable (not secret), repo-level | This repo's Settings → Secrets and variables → Actions → Variables tab | Identifies the Cloudflare account (not sensitive, so it's a variable, not a secret) |
+| Name                    | Type                            | Where it lives                                                        | Purpose                                                                             |
+| ----------------------- | ------------------------------- | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `CLOUDFLARE_API_TOKEN`  | Secret, org-wide                | GitHub org settings → Secrets and variables → Actions                 | Auth token `wrangler-action` uses to deploy                                         |
+| `CLOUDFLARE_ACCOUNT_ID` | Variable (not secret), org-wide | GitHub org settings → Secrets and variables → Actions → Variables tab | Identifies the Cloudflare account (not sensitive, so it's a variable, not a secret) |
+
+Both are org-wide, so `${{ vars.CLOUDFLARE_ACCOUNT_ID }}` and `${{ secrets.CLOUDFLARE_API_TOKEN }}` in the workflow resolve from org settings — there's nothing to configure at the repo level for either.
 
 If either ever needs to be rotated or recreated:
 
 - **Account ID**: Cloudflare dashboard → any Cloudflare Pages/Workers page → the account ID is shown in the right sidebar, or run `npx wrangler whoami`.
-- **API Token**: Cloudflare dashboard → My Profile → API Tokens → Create Token. Use the "Edit Cloudflare Workers" template or a custom token with at minimum `Account.Cloudflare Pages: Edit` permission for the AMSAT-NA account. Since this token is an **org-wide** GitHub secret, coordinate before rotating it — other repos may depend on the same token.
+- **API Token**: Cloudflare dashboard → My Profile → API Tokens → Create Token. Use the "Edit Cloudflare Workers" template or a custom token with at minimum `Account.Cloudflare Pages: Edit` permission for the AMSAT-NA account.
+
+Since both are **org-wide**, coordinate before rotating either — other repos may depend on the same values.
 
 ---
 

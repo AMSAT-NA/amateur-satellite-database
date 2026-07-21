@@ -2,7 +2,7 @@ A searchable, sortable table listing all the ham satellites in space
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/en/) version 12, 14 or 16, though at minimum 12.20, 14.14, or 16.0.
+- [Node.js](https://nodejs.org/en/) version 24 or later.
 - [Node Package Manager](https://www.w3schools.com/whatis/whatis_npm.asp)
 
 ## Contributing
